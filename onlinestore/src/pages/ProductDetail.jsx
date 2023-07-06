@@ -5,7 +5,7 @@ const ProductDetail = () => {
   //get product details
 
   const {data:product} = useQuery(['details'], async()=>{
-    const response = await axios.get('https://fakestoreapi.com/products/1');
+    const response = await axios.get('https://fakestoreapi.com/products/:id');
     return response.data;
   })
   return (
@@ -15,7 +15,7 @@ const ProductDetail = () => {
           <img src={product?.image} alt={product?.title} className="w-[25rem]" />
           <div>
             <h2>{product?.title}</h2>
-            <p className="text-[#F75606]">Ratings: {product?.rating.rate} </p>
+            <p className="text-[#F75606]">Ratings: {product?.rating?.rate} </p>
             <p>{product?.description}</p>
             <p>Rs. {product?.price} </p>
             <button>Add to Cart</button>

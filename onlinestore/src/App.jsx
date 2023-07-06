@@ -4,8 +4,11 @@ import {
   QueryClient,
   QueryClientProvider
 } from "@tanstack/react-query";
+import {Routes, Route} from 'react-router-dom';
 import "./App.css";
-// import ProductDetail from "./pages/ProductDetail";
+import ProductDetail from "./pages/ProductDetail";
+import Footer from "./components/Footer";
+
 
 const queryClient = new QueryClient();
 function App() {
@@ -13,8 +16,11 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <Navbar />
-        <Home />
-        {/* <ProductDetail/> */}
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/products/:id" element={<ProductDetail/>} />
+        </Routes>
+        <Footer/>
       </QueryClientProvider>
     </>
   );

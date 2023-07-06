@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer components{
+    .container{
+        @apply bg-[#e9ecef] px-10 py-4;
+    }
+
+    .heading{
+        @apply text-3xl font-bold pb-2;
+    }
+
+    .cols{
+        @apply grid grid-cols-4 gap-y-10;
+    }
+
+    .m-top{
+        @apply mt-6 p-2;
+    }
+
+    .line{
+        @apply mb-4 w-[8rem] h-[0.25rem] rounded-md bg-[orange];
+    }
+}
